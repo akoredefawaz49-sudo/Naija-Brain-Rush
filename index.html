@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b8f55">
+  <title>Naija Brain Rush 🇳🇬</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- HOME SCREEN -->
+  <section id="homeScreen" class="screen active">
+    <div class="hero">
+
+      <div class="flag">🇳🇬</div>
+
+      <h1>Naija <span>Brain Rush</span></h1>
+
+      <p class="tagline">
+        Think fast. Answer smart. Become a Naija Legend! 🧠🔥
+      </p>
+
+      <div class="best-score">
+        🏆 Best Score: <span id="homeBestScore">0</span>
+      </div>
+
+      <button class="main-btn" onclick="showCategoryScreen()">
+        START GAME 🚀
+      </button>
+
+      <button class="secondary-btn" onclick="showHowToPlay()">
+        HOW TO PLAY
+      </button>
+
+    </div>
+
+    <footer>
+      Made with ❤️ in Nigeria 🇳🇬
+    </footer>
+  </section>
+
+
+  <!-- CATEGORY SCREEN -->
+  <section id="categoryScreen" class="screen">
+
+    <div class="game-header">
+      <button class="back-btn" onclick="goHome()">←</button>
+      <h2>Choose Your Battle</h2>
+    </div>
+
+    <p class="choose-text">Pick a category and test your brain.</p>
+
+    <div class="categories">
+
+      <button class="category-card" onclick="startGame('all')">
+        <span>🔥</span>
+        <strong>Mixed Rush</strong>
+        <small>Everything</small>
+      </button>
+
+      <button class="category-card" onclick="startGame('naija')">
+        <span>🇳🇬</span>
+        <strong>Naija Knowledge</strong>
+        <small>Test your Nigerian knowledge</small>
+      </button>
+
+      <button class="category-card" onclick="startGame('football')">
+        <span>⚽</span>
+        <strong>Football</strong>
+        <small>How well do you know football?</small>
+      </button>
+
+      <button class="category-card" onclick="startGame('math')">
+        <span>🔢</span>
+        <strong>Mathematics</strong>
+        <small>Calculate fast</small>
+      </button>
+
+      <button class="category-card" onclick="startGame('brain')">
+        <span>🧠</span>
+        <strong>Brain & Logic</strong>
+        <small>Think before you answer</small>
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- GAME SCREEN -->
+  <section id="gameScreen" class="screen">
+
+    <div class="game-top">
+
+      <button class="quit-btn" onclick="quitGame()">
+        ✕
+      </button>
+
+      <div class="score-box">
+        SCORE
+        <strong id="score">0</strong>
+      </div>
+
+      <div class="timer-box">
+        ⏱️
+        <strong id="timer">15</strong>
+      </div>
+
+    </div>
+
+    <div class="progress-container">
+      <div id="progressBar"></div>
+    </div>
+
+    <div class="question-info">
+      <span>Question <b id="questionNumber">1</b>/10</span>
+      <span id="categoryName">Mixed Rush</span>
+    </div>
+
+    <div class="question-card">
+
+      <div class="question-icon">🧠</div>
+
+      <h2 id="question">
+        Question goes here
+      </h2>
+
+    </div>
+
+    <div id="answers" class="answers"></div>
+
+    <div class="lives">
+      Lives:
+      <span id="lives">❤️❤️❤️</span>
+    </div>
+
+  </section>
+
+
+  <!-- RESULT SCREEN -->
+  <section id="resultScreen" class="screen">
+
+    <div class="result-card">
+
+      <div id="resultEmoji" class="result-emoji">
+        🏆
+      </div>
+
+      <h1 id="resultTitle">
+        Brain Rush Complete!
+      </h1>
+
+      <p id="resultMessage">
+        Well done!
+      </p>
+
+      <div class="final-score">
+        <small>YOUR SCORE</small>
+        <strong id="finalScore">0</strong>
+      </div>
+
+      <div class="stats">
+
+        <div>
+          <strong id="correctAnswers">0</strong>
+          <span>Correct</span>
+        </div>
+
+        <div>
+          <strong id="wrongAnswers">0</strong>
+          <span>Wrong</span>
+        </div>
+
+        <div>
+          <strong id="accuracy">0%</strong>
+          <span>Accuracy</span>
+        </div>
+
+      </div>
+
+      <div class="rank-box">
+        <small>YOUR RANK</small>
+        <strong id="rank">Beginner</strong>
+      </div>
+
+      <button class="main-btn" onclick="showCategoryScreen()">
+        PLAY AGAIN 🔥
+      </button>
+
+      <button class="secondary-btn" onclick="goHome()">
+        BACK HOME
+      </button>
+
+    </div>
+
+  </section>
+
+
+  <!-- HOW TO PLAY -->
+  <div id="howModal" class="modal">
+
+    <div class="modal-content">
+
+      <button class="close-btn" onclick="closeHowToPlay()">×</button>
+
+      <h2>🧠 How To Play</h2>
+
+      <p>⚡ Answer questions as quickly as possible.</p>
+      <p>❤️ You have 3 lives.</p>
+      <p>⏱️ You have 15 seconds per question.</p>
+      <p>✅ Correct answer = +10 points.</p>
+      <p>❌ Wrong answer = lose a life.</p>
+      <p>🏆 Finish the game and discover your Naija rank!</p>
+
+      <button class="main-btn" onclick="closeHowToPlay(); showCategoryScreen();">
+        LET'S GO 🚀
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
